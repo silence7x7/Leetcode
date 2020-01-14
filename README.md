@@ -5,7 +5,7 @@
 # 数据结构
 what is strcat,strcat的第一第二参数不能是char 'a','c'必须是char* 或者是char[]???
 
-FizzBuzz
+- [FizzBuzz](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/25/math/60/)
 ```c++
 class Solution {
 public:
@@ -38,3 +38,5 @@ public:
     }
 };
 ```
+上面这代码显示内存超了
+初想是不是定义了vector，然后使用太多push_back导致。
