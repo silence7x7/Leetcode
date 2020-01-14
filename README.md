@@ -5,7 +5,7 @@
 # 数据结构
 what is strcat,strcat的第一第二参数不能是char 'a','c'必须是char* 或者是char[]???
 
-- [FizzBuzz](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/25/math/60/)
+- 412(Easy)[FizzBuzz](https://leetcode-cn.com/problems/fizz-buzz/)
 ```c++
 class Solution {
 public:
@@ -13,7 +13,7 @@ public:
         vector<string> res;
         for(int i=1;i<=n;++i){
             if((i%3==0)&&(i%5!=0))res.push_back("Fizz");
-            else if((i%3!=0)&&(i%5==0))res.push_back("Buzz");
+            else if((i%3!=0)&&(i%5==0))res.push_back("Buzz");//其实不用这么复杂判断，看下面版本精简if判断
             else if((i%3==0)&&(i%5==0))res.push_back("FizzBuzz");
             //else res.push_back(i);int给string是错误的
             //十进制转为string，方法一
@@ -41,3 +41,17 @@ public:
 上面这代码显示内存超了
 初想是不是定义了vector，然后使用太多push_back导致。
 加了res.resize(n);把所有push_back换为res[i]="xxx";但时间超了
+```c++
+    //这么做击败99%
+    vector<string> fizzBuzz(int n) {
+        vector<string> res;
+        for(int i = 1;i <= n;++i){
+            if(i%15 == 0) res.push_back("FizzBuzz");
+              else if(i%3 == 0) res.push_back("Fizz");
+                  else if(i%5 == 0) res.push_back("Buzz");
+                      else res.push_back(to_string(i));
+        }
+        return res;
+    }
+```
+to_string()
