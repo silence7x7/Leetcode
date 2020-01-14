@@ -40,3 +40,4 @@ public:
 ```
 上面这代码显示内存超了
 初想是不是定义了vector，然后使用太多push_back导致。
+加了res.resize(n);把所有push_back换为res[i]="xxx";但时间超了
