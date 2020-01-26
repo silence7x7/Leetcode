@@ -1,0 +1,36 @@
+- [查找学生信息](https://www.nowcoder.com/practice/fe8bff0750c8448081759f3ee0d86bb4?tpId=40&tqId=21358&tPage=2&rp=1&ru=%2Fta%2Fkaoyan&qru=%2Fta%2Fkaoyan%2Fquestion-ranking)
+
+```c++
+int main(){
+    int N;
+    cin>>N;
+    map<string,string> m;
+    cin.ignore();
+    while(N--){
+        string s;
+        //cin>>s;
+        //gets(s);gets只能用于char[]；
+		//cin.getline(s); 错误
+		getline(cin,s); 
+        int id_pos=s.find_first_of(' ');
+        string id;
+        for(int i=0;i<id_pos;++i)id+=s[i];
+        m[id]=s;
+    }
+	for(map<string,string>::iterator it=m.begin();it!=m.end();++it){
+		cout<<"1："<<it->first<<"2："<<it->second<<endl;
+	} 
+```
+输出，不加ignore的情况：
+```c++
+4
+01 LI NAN 23
+02 LIAO NAN 23
+03 NA NAN 25
+1：2：//把4后面的换行符读进来了，导致实际上只输入3组数据
+1：012：01 LI NAN 23
+1：022：02 LIAO NAN 23
+1：032：03 NA NAN 25
+
+```
+cin>>s不能通过，getline搭配ignore AC
