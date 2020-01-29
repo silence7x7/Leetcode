@@ -65,9 +65,17 @@ printf("%4.4d",a[i]);
 
 
 <details>
-<summary>大数阶乘</summary>
+<summary>欧几里得算法最大公约数</summary>
       
 ```c++
+int gcd(int a, int b)//欧几里得算法求最大公约数
+{
+    if(b==0) return a;
+    else return gcd(b, a%b);
+}
 
+//判断
+gcd(buf[i], buf[j])==1代表最大公约数为1，即不能化简约分
+算法精妙在于会自动交换a，b，太秀了
 ```
 </details>
