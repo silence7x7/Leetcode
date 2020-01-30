@@ -79,3 +79,52 @@ gcd(buf[i], buf[j])==1代表最大公约数为1，即不能化简约分
 算法精妙在于会自动交换a，b，太秀了
 ```
 </details>
+
+<details>
+<summary>迭代器失效</summary>
+
+```c++
+//在vector迭代器遍历时删除或插入数据，导致迭代器失效
+vector<int> ans(4);
+    ans[0]=1;
+    for(auto n:ans)
+    	if(n!=0)ans.push_back(9);
+    int i=0;
+    for(auto n:ans){
+        cout<<i<<"  "<<n<<endl;
+	  i++;
+    }
+ //得到输出结果：
+0  1
+1  0
+2  0
+3  0
+4  9
+5  9
+并不会一直增长，因为vector动态增长原理，遍历时vec就这么大，迭代器遍历时不会改变大小。
+所以最后并不会无限插入数据9
+```
+reference:  
+[可以vec改用list解决](https://blog.csdn.net/hechao3225/article/details/55101344)  
+[迭代器失效](https://blog.csdn.net/petersmart123/article/details/53304437)
+</details>
+
+<details>
+<summary>迭代器失效</summary>
+      
+```c++
+
+
+```
+</details>
+
+<kbd>string</kbd>+<kbd>tree</kbd>+<kbd>DP</kbd> 
+
+<details>
+<summary>ssssssss</summary>
+
+```c++
+
+
+```
+</details>
