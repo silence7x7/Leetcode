@@ -110,12 +110,14 @@ reference:
 </details>
 
 <details>
-<summary>迭代器失效</summary>
+<summary>string compare函数</summary>
       
+- [compare](http://www.cplusplus.com/reference/string/string/compare/)  
 ```c++
-
-
+str1.compare(0,i,str2,0,i)==0//str1的0开始i个长度与str2的0开始i个长度比较。
 ```
+c语言<string.h>用的是[strcmp](https://www.runoob.com/cprogramming/c-function-strcmp.html)
+
 </details>
 
 <kbd>string</kbd>+<kbd>tree</kbd>+<kbd>DP</kbd> 
