@@ -123,6 +123,40 @@ c语言<string.h>用的是[strcmp](https://www.runoob.com/cprogramming/c-functio
 <kbd>string</kbd>+<kbd>tree</kbd>+<kbd>DP</kbd> 
 
 <details>
+<summary>printf和cout混合使用出问题</summary>
+
+```c++
+printf("A\n");
+cout<<"B\n";
+printf("C\n");
+
+the out put is:
+A
+C
+B
+not:
+A
+B
+C
+explanation:
+1.   you   shouldn't   mix   "printf()"   and   "cout"   in   the   same   program   
+because   C   stdio   and   C++   iostreams   are   completely   independent   
+and   they   may   have   different   buffering   scheme   and   they   don't   share   the   same   buffer,  
+so   the   ouput   may   come   out   in   an   order   that   you   are   not   expecting,   
+that   is   probably   what   happened   in   your   case  .
+   
+2.   try  
+   
+  cout   <<   "B"   <<   endl;  
+   
+  or   call    
+   
+  ios::sync_with_stdio();
+
+```
+</details>
+
+<details>
 <summary>ssssssss</summary>
 
 ```c++
@@ -130,3 +164,4 @@ c语言<string.h>用的是[strcmp](https://www.runoob.com/cprogramming/c-functio
 
 ```
 </details>
+
